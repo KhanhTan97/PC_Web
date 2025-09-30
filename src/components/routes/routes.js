@@ -1,7 +1,7 @@
-import Home from '~/components/pages/Home';
-import Profile from '~/components/pages/Profile';
-import ProductionsDetail from '~/components/pages/ProductionsDetail';
-import LayoutDefault from '../Layout/LayoutDefault';
+import Home from '~/components/pages/Home/Home';
+import Profile from '~/components/pages/Profile/Profile';
+import ProductionsDetail from '~/components/pages/ProductionsDetail/ProductionsDetail';
+import LayoutDefault from '../Layout/LayoutDefault/LayoutDefault';
 
 const publicRoutes = [
     { path: '/', component: Home },

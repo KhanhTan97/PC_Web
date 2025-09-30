@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
 import styles from './Slider.module.scss';
-import img from '~/assets/Image';
+import img from '~/assets/Image/Image';
 
 const cx = classNames.bind(styles);
 

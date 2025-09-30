@@ -10,6 +10,9 @@
     --background-color-web: #0c0c0c;
     --background-color-header: rgba(90, 89, 89, 0.92);
     --color-button-text: #b6f1e4;
+
+    // Font family
+    --font-family: 'Montserrat', sans-serif;
 }
 
 * {
@@ -21,7 +24,7 @@ html {
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-family);
     font-optical-sizing: auto;
     font-weight: 600;
     font-style: normal;
