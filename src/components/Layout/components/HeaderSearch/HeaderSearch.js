@@ -1,26 +1,23 @@
 import classNames from 'classnames/bind';
 import styles from './HeaderSearch.module.scss';
 import Button from '~/components/Button/Button';
+
+import { linksInfo } from './LinksInfo';
 import { SearchIcon } from '~/components/Icons';
+import { useState } from 'react';
 
 const cx = classNames.bind(styles);
 
-const linksInfo = [
-    {
-        to: '/tincongnghe',
-        title: 'Tin công nghệ',
-    },
-    {
-        to: '/dichvusuachua',
-        title: 'Dịch vụ sửa chữa',
-    },
-    {
-        to: '/baohanh',
-        title: 'Bảo hành',
-    },
-];
-
 function HeaderSearch() {
+    const [searchValue, setSearchValue] = useState('');
+
+    const handleChange = (e) => {
+        const targetValue = e.target.value;
+        if (!targetValue.startsWith(' ')) {
+            setSearchValue(targetValue);
+        }
+    };
+
     return (
         <div className={cx('wrapper')}>
             <div className={cx('navLinks')}>
@@ -31,7 +28,12 @@ function HeaderSearch() {
                 ))}
             </div>
             <div className={cx('search')}>
-                <input spellCheck={false} placeholder="Search your items..." />
+                <input
+                    value={searchValue}
+                    onChange={handleChange}
+                    spellCheck={false}
+                    placeholder="Search your items..."
+                />
 
                 <button className={cx('search-btn')}>
                     <SearchIcon className={cx('search-icon')} />

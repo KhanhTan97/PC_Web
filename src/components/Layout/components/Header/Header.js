@@ -3,7 +3,13 @@ import img from '~/assets/Image/Image';
 import classNames from 'classnames/bind';
 import styles from './Header.module.scss';
 import './Header.module.scss';
+
+import HeadlessTippy from '@tippyjs/react/headless';
+import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { navHeader } from './NavHeader';
+import Wrapper from '~/components/Popper/Wrapper';
+import NotifyMenu from './NotifyMenu/NotifyMenu';
 
 const cx = classNames.bind(styles);
 
@@ -15,6 +21,25 @@ function Header() {
                     <img className={cx('logo')} src={img.logo} alt="logo" />
                 </div>
                 <div className={cx('actionsHeader')}>
+                    <div>
+                        <HeadlessTippy
+                            interactive
+                            visible={true}
+                            render={(attrs) => {
+                                return (
+                                    <Wrapper>
+                                        <NotifyMenu />
+                                    </Wrapper>
+                                );
+                            }}
+                        >
+                            <Button primary>
+                                Thông báo
+                                <FontAwesomeIcon icon={faAngleDown} />
+                            </Button>
+                        </HeadlessTippy>
+                    </div>
+
                     {navHeader.map((nav, index) => (
                         <Button key={index} className={nav.propType}>
                             {nav.propType === 'login' ? (
