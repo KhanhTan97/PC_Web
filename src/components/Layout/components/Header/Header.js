@@ -21,10 +21,12 @@ function Header() {
                     <img className={cx('logo')} src={img.logo} alt="logo" />
                 </div>
                 <div className={cx('actionsHeader')}>
-                    <div>
+                    <div className={cx('tippy-notify')}>
                         <HeadlessTippy
-                            interactive
+                            delay={[300, 500]}
+                            placement="top-end"
                             visible={true}
+                            interactive
                             render={(attrs) => {
                                 return (
                                     <Wrapper>
@@ -39,7 +41,6 @@ function Header() {
                             </Button>
                         </HeadlessTippy>
                     </div>
-
                     {navHeader.map((nav, index) => (
                         <Button key={index} className={nav.propType}>
                             {nav.propType === 'login' ? (

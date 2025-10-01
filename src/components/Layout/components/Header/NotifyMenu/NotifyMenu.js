@@ -1,3 +1,4 @@
+import ItemMenu from './ListNotifyMenu/ItemMenu';
 import styles from './NotifyMenu.module.scss';
 import classNames from 'classnames/bind';
 
@@ -11,11 +12,11 @@ function NotifyMenu() {
                 <button className={cx('check_all')}>Đánh dấu tất cả đã đọc</button>
             </div>
 
-            <div className={cx('body')}>{/* items */}</div>
+            <div className={cx('body')}>
+                <ItemMenu />
+            </div>
 
-            <a className={cx('notify')} href="/notify">
-                Xem tất cả thông báo
-            </a>
+            <span className={cx('notify')}>Xem tất cả thông báo</span>
         </div>
     );
 }
