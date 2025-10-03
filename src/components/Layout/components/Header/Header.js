@@ -25,20 +25,21 @@ function Header() {
                         <HeadlessTippy
                             delay={[300, 500]}
                             placement="top-end"
-                            visible={true}
                             interactive
                             render={(attrs) => {
                                 return (
-                                    <Wrapper>
+                                    <Wrapper className={cx('OnlyAnimation')}>
                                         <NotifyMenu />
                                     </Wrapper>
                                 );
                             }}
                         >
-                            <Button primary>
-                                Thông báo
-                                <FontAwesomeIcon icon={faAngleDown} />
-                            </Button>
+                            <div className={cx('hoverAnimation')}>
+                                <Button primary>
+                                    Thông báo
+                                    <FontAwesomeIcon icon={faAngleDown} />
+                                </Button>
+                            </div>
                         </HeadlessTippy>
                     </div>
                     {navHeader.map((nav, index) => (

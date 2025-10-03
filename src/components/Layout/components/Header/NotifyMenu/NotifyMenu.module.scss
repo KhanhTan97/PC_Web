@@ -1,7 +1,7 @@
 .wrapper {
     position: relative;
     max-width: 400px;
-    height: 303px;
+    max-height: 303px;
     background-color: rgba(20, 20, 20, 1);
 }
 
@@ -17,6 +17,33 @@
     font-weight: 700;
     margin-right: 30px;
     text-transform: uppercase;
+}
+
+// Set scrollbar
+.body {
+    --back-color-scrollbar-thumb: #555;
+    --back-color-scrollbar-thumb-hover: #686868;
+    --height-scrollbar-content: 200px;
+
+    max-height: var(--height-scrollbar-content);
+    overflow-y: auto;
+}
+
+.body::-webkit-scrollbar {
+    width: 5px;
+}
+
+.body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.body::-webkit-scrollbar-thumb {
+    background-color: var(--back-color-scrollbar-thumb);
+    border-radius: 4px;
+}
+
+.body::-webkit-scrollbar-thumb:hover {
+    background-color: var(--back-color-scrollbar-thumb-hover);
 }
 
 .check_all {
@@ -36,6 +63,7 @@
 }
 
 .notify {
+    display: block;
     position: absolute;
     background-color: var(--background-color-web);
     bottom: 0;
